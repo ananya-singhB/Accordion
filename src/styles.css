@@ -1,0 +1,81 @@
+.accordion {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 720px;
+}
+
+.accordion-item + .accordion-item {
+  border-top: 1px solid #e5e7eb;
+}
+
+.accordion-header {
+  margin: 0;
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: 600 1rem/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Noto Sans";
+}
+
+.accordion-trigger:hover,
+.accordion-trigger:focus-visible {
+  background: #f9fafb;
+}
+
+.accordion-trigger:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.accordion-title {
+  color: #111827;
+}
+
+.accordion-icon {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #6b7280;
+  border-bottom: 2px solid #6b7280;
+  transform: rotate(45deg);
+  transition: transform 200ms ease, border-color 200ms ease;
+}
+
+.accordion-icon.rotated {
+  transform: rotate(-135deg);
+  border-color: #2563eb;
+}
+
+.accordion-panel {
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease, padding-top 200ms ease,
+    padding-bottom 200ms ease;
+}
+
+.accordion-panel[hidden] {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.accordion-panel:not([hidden]) {
+  grid-template-rows: 1fr;
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
+}
+
+.accordion-panel-inner {
+  overflow: hidden; /* needed for the grid reveal trick */
+}
